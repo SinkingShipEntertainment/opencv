@@ -15,6 +15,14 @@ FATAL: In-source builds are not allowed.
 endif()
 
 
+#####################################################
+# REZ
+set(OPENEXR_ROOT $ENV{OPENEXR_ROOT})
+set(PNG_ROOT $ENV{REZ_LIBPNG_ROOT})
+set($ENV{PNG_ROOT} $ENV{REZ_LIBPNG_ROOT})
+#####################################################
+
+
 include(cmake/OpenCVMinDepVersions.cmake)
 
 if(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
