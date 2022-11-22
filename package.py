@@ -68,7 +68,10 @@ def commands():
         if ver.major == 2:
             version_dir = "python2.7"
         elif ver.major == 3:
-            version_dir = "python3.7"
+            if ver.minor == 7:
+                version_dir = "python3.7"
+            elif ver.minor == 9:
+                version_dir = "python3.9"
 
     if version_dir:
         env.PYTHONPATH.append("{root}/lib/" + version_dir + "/site-packages")
